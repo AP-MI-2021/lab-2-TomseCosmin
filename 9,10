@@ -1,0 +1,43 @@
+def get_base_16_from_2(n: str) -> str:
+    v = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101",
+         "1110", "1111"]
+    z = ""
+    while n != "":
+        i = v.index(n[-4:])
+        if i < 10:
+            z += str(i)
+        elif i == 10:
+            z += "A"
+        elif i == 11:
+            z += "B"
+        elif i == 12:
+            z += "C"
+        elif i == 13:
+            z += "D"
+        elif i == 14:
+            z += "E"
+        elif i == 15:
+            z += "F"
+        n = n[:-4]
+    return z
+
+
+def main():
+    x = input()
+    x = get_base_16_from_2(x)
+    print(x[::-1])
+
+
+main()
+def get_n_choose_k(n: int, k: int) -> int:
+    produs1=1
+    produs2=1
+    produs3=1
+    i: int
+    for i in range(1, n + 1):
+        produs1 = produs1 * i
+    for j in range(1, k + 1):
+        produs2 = produs2 * j
+    for l in range(1, n - k + 1):
+        produs3 = produs3 * l
+    print(produs1 / (produs3 * produs2))

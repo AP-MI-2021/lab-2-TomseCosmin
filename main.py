@@ -70,6 +70,7 @@ def main():
         get_n_choose_k(x,y)
         main()
     if optiune=="3":
+        print("scrieti un nr multiplu de 4 de 0 si 1")
         x = input()
         x = get_base_16_from_2(x)
         print("nr dat in baza 16 este",x[::-1])

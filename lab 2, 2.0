@@ -1,0 +1,24 @@
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, n // 2 + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
+def get_largest_prime_below(n):
+    if n==3:
+        print("2")
+        return 2
+    else:
+        for m in range(n, 1, -1):
+            if is_prime(m) == True:
+                print(m)
+                return (m)
+                break
+
+
+assert get_largest_prime_below(9) == 7
+assert get_largest_prime_below(14) == 13
+assert get_largest_prime_below(3) == 2

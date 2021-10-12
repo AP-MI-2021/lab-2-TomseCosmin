@@ -35,6 +35,8 @@ def get_base_16_from_2(n: str) -> str:
     v = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101",
          "1110", "1111"]
     z = ""
+    if len(n) % 4 != 0:
+        n = (4 - len(n) % 4) * "0" + n
     while n != "":
         i = v.index(n[-4:])
         if i < 10:
@@ -52,7 +54,8 @@ def get_base_16_from_2(n: str) -> str:
         elif i == 15:
             z += "F"
         n = n[:-4]
-    return z
+
+    return zz
 
 def main():
     print("1. Determinati cel mai mare nr prim mai mic decat un nr dat")

@@ -1,3 +1,4 @@
+
 def is_prime(n):
     if n < 2:
         return False
@@ -55,32 +56,35 @@ def get_base_16_from_2(n: str) -> str:
             z += "F"
         n = n[:-4]
 
-    return zz
+    return z
 
 def main():
     print("1. Determinati cel mai mare nr prim mai mic decat un nr dat")
     print("2. Calculati combinari de n luate cate k")
     print("3.convertiti din baza 2 in baza 16")
     print("x. Iesire")
-    optiune=input("dati optiune: ")
-    if optiune=="1":
-        x = int(input("Dati nr.:"))
-        get_largest_prime_below(x)
-        main()
-    if optiune=="2":
-        x = int(input("Dati nr.elemente:"))
-        y = int(input("Dati nr. elemente luate cate:"))
-        get_n_choose_k(x,y)
-        main()
-    if optiune=="3":
-        print("scrieti un nr multiplu de 4 de 0 si 1")
-        x = input()
-        x = get_base_16_from_2(x)
-        print("nr dat in baza 16 este",x[::-1])
-        main()
-    if optiune=="x":
-        print("interfata de tip consola a fost inchisa")
-    else:
-        print("optiune gresita")
+    while True:
+        optiune=input("dati optiune: ")
+        if optiune=="1":
+            x = int(input("Dati nr.:"))
+            get_largest_prime_below(x)
+            main()
+        if optiune=="2":
+            x = int(input("Dati nr.elemente:"))
+            y = int(input("Dati nr. elemente luate cate:"))
+            get_n_choose_k(x,y)
+            main()
+        if optiune=="3":
+            print("scrieti un nr multiplu de 4 de 0 si 1")
+            x = input()
+            x = get_base_16_from_2(x)
+            print("nr dat in baza 16 este",x[::-1])
+            main()
+        if optiune=="x":
+            print("interfata de tip consola a fost inchisa")
+            return False
+        else:
+            return False
+            print("optiune gresita")
 
 main()
